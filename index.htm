@@ -1,46 +1,42 @@
 <html>
   <body>
     <div id="app"></div>
+
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <!-- Babel Script -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script type="text/jsx">
-        function createTitle(title) {
-            if (title) {
-                return title;
-            } else {
-                return 'Default title';
-            }
-        }
-          
-        function Header({ title }) {
-            return <h1>{createTitle(title)}</h1>;
-        }
-          
-        function HomePage() {
-            const [likes, setLikes] = React.useState(0);
-            const names = ['Ayrton Senna', 'Lewis Hamilton', 'Matheus Sena'];
+      const app = document.getElementById("app")
 
-            function handleClick() {
-                setLikes(likes + 1);
-            }
-          
-            return (
-                <div>
-                    <Header title="Best pilots in the World 🚀" />
-                    <ul>
-                    {names.map((name) => (
-                        <li key={name}>{name}</li>
-                    ))}
-                    </ul>
+      function Header({ title }) {
+        return <h1>{title ? title : "Default title"}</h1>
+      }
 
-                    <button onClick={handleClick}>Like({likes})</button>
-                </div>
-            );
+      function HomePage() {
+        const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"]
+
+        const [likes, setLikes] = React.useState(0)
+
+        function handleClick() {
+          setLikes(likes + 1)
         }
-          
-          ReactDOM.render(<HomePage />, app);
+
+        return (
+          <div>
+            <Header title="Develop. Preview. Ship. 🚀" />
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+
+            <button onClick={handleClick}>Like ({likes})</button>
+          </div>
+        )
+      }
+
+      ReactDOM.render(<HomePage />, app)
     </script>
   </body>
 </html>
