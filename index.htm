@@ -18,7 +18,7 @@
             return <h1>{createTitle(title)}</h1>;
         }
           
-          function HomePage() {
+        function HomePage() {
             const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
           
             return (
@@ -26,12 +26,12 @@
                 <Header title="Develop. Preview. Ship. 🚀" />
                 <ul>
                   {names.map((name) => (
-                    <li>{name}</li>
+                    <li key={name}>{name}</li>
                   ))}
                 </ul>
               </div>
             );
-          }
+        }
           
           ReactDOM.render(<HomePage />, app);
     </script>
