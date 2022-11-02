@@ -19,17 +19,24 @@
         }
           
         function HomePage() {
+            const [likes, setLikes] = React.useState(0);
             const names = ['Ayrton Senna', 'Lewis Hamilton', 'Matheus Sena'];
+
+            function handleClick() {
+                setLikes(likes + 1);
+            }
           
             return (
-              <div>
-                <Header title="Best pilots in the World 🚀" />
-                <ul>
-                  {names.map((name) => (
-                    <li key={name}>{name}</li>
-                  ))}
-                </ul>
-              </div>
+                <div>
+                    <Header title="Best pilots in the World 🚀" />
+                    <ul>
+                    {names.map((name) => (
+                        <li key={name}>{name}</li>
+                    ))}
+                    </ul>
+
+                    <button onClick={handleClick}>Like({likes})</button>
+                </div>
             );
         }
           
