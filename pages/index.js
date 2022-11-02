@@ -5,7 +5,7 @@ function Header({ title }) {
 }
 
 export default function HomePage() {
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+  const names = ['Ayrton Senna', 'Lewis Hamilton', 'Matheus Sena'];
 
   const [likes, setLikes] = useState(0);
 
@@ -15,7 +15,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <Header title="Develop. Preview. Ship. 🚀" />
+      <Header title="Best pilots 🚀" />
       <ul>
         {names.map((name) => (
           <li key={name}>{name}</li>
